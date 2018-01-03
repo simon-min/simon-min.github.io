@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/01/03/hello-world/</loc>
+    <lastmod>2018-01-03T12:45:13.902Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2018-01-03T03:54:00.909Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/01/03/Hexo%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2018-01-03T08:18:27.192Z</lastmod>
     <data>
@@ -21,42 +36,6 @@
     </url>
 
     
-  <url>
-    <loc>http://yoursite.com/2018/01/03/test/</loc>
-    <lastmod>2018-01-03T08:12:55.272Z</lastmod>
-    <data>
-        <display>
-        <title>test</title>
-        <pubTime>2018-01-03T04:15:01.000Z</pubTime>
-        
-        <tag>html</tag>
-         
-        <tag>css</tag>
-         
-        <tag>js</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
     
-    
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/03/hello-world/</loc>
-    <lastmod>2018-01-03T04:21:00.344Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2018-01-03T03:54:00.909Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
 </urlset>
