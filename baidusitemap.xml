@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/01/03/PHP%E4%BD%BF%E7%94%A8CURL%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82/</loc>
+    <lastmod>2018-01-04T08:08:01.372Z</lastmod>
+    <data>
+        <display>
+        <title>PHP使用CURL发送请求</title>
+        <pubTime>2018-01-03T09:17:46.000Z</pubTime>
+        
+        <tag>curl</tag>
+         
+         
+           
+             
+              <breadCrumb title="php" url="http://yoursite.com/categories/php/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/01/03/hello-world/</loc>
-    <lastmod>2018-01-03T12:57:58.408Z</lastmod>
+    <lastmod>2018-01-03T13:06:19.422Z</lastmod>
     <data>
         <display>
         <title>Hello World</title>
