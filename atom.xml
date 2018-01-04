@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-04T08:12:03.581Z</updated>
+  <updated>2018-01-04T10:38:39.528Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu上的防火墙iptables</title>
+    <link href="http://yoursite.com/2018/01/04/Ubuntu%E4%B8%8A%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99iptables/"/>
+    <id>http://yoursite.com/2018/01/04/Ubuntu上的防火墙iptables/</id>
+    <published>2018-01-04T10:37:30.000Z</published>
+    <updated>2018-01-04T10:38:39.528Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://yoursite.com/categories/Linux/"/>
+    
+    
+      <category term="iptables" scheme="http://yoursite.com/tags/iptables/"/>
+    
+  </entry>
   
   <entry>
     <title>PHP使用CURL发送请求</title>
