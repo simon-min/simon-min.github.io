@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://yoursite.com/2018/01/03/hello-world/</loc>
+    <lastmod>2018-01-04T08:19:53.209Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2018-01-03T08:17:46.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2018/01/03/PHP%E4%BD%BF%E7%94%A8CURL%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82/</loc>
     <lastmod>2018-01-04T08:12:03.581Z</lastmod>
     <data>
@@ -17,39 +34,6 @@
            
              
               <breadCrumb title="php" url="http://yoursite.com/categories/php/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/03/hello-world/</loc>
-    <lastmod>2018-01-03T13:06:19.422Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2018-01-03T03:54:00.909Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2018/01/03/Hexo%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2018-01-03T08:18:27.192Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo教程</title>
-        <pubTime>2018-01-03T08:17:46.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Hexo教程" url="http://yoursite.com/categories/Hexo%E6%95%99%E7%A8%8B/"/>
           
         </display>
     </data>
