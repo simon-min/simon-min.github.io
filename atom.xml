@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-01-04T11:38:01.436Z</updated>
+  <updated>2018-10-16T07:55:07.136Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu安装golang</title>
+    <link href="http://yoursite.com/2018/01/04/Ubuntu%E5%AE%89%E8%A3%85golang/"/>
+    <id>http://yoursite.com/2018/01/04/Ubuntu安装golang/</id>
+    <published>2018-01-04T10:37:30.000Z</published>
+    <updated>2018-10-16T07:55:07.136Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-首先，去官网下载对应版本的压缩包：https-golang-org-dl"><a href="#1-首先，去官网下载对应版本的压缩包：https-golang-org-dl" class="headerlink" title="1.首先，去官网下载对应版本的压缩包：https://golang.org/dl/"></a>1.首先，去官网下载对应版本的压缩包：<a href="https://golang.org/dl/" target="_blank" rel="noopener">https://golang.org/dl/</a></h3><h3 id="2-解压"><a href="#2-解压" class="headerlink" title="2.解压"></a>2.解压</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -zxvf go1.11.1.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure><h3 id="3-将解压后的文件夹go移动到-usr-local"><a href="#3-将解压后的文件夹go移动到-usr-local" class="headerlink" title="3.将解压后的文件夹go移动到/usr/local"></a>3.将解压后的文件夹go移动到<code>/usr/local</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv go /usr/local</span><br></pre></td></tr></table></figure><h3 id="4-设置环境变量"><a href="#4-设置环境变量" class="headerlink" title="4.设置环境变量"></a>4.设置环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc </span><br><span class="line">//尾部输入,path目录可以自己定义</span><br><span class="line">export GOROOT=/usr/local/go</span><br><span class="line">export GOPATH=$HOME/goprojects</span><br><span class="line">export GOBIN=$GOPATH/bin</span><br><span class="line">export PATH=$PATH:$GOROOT/bin:$GOPATH/bin</span><br><span class="line">//使修改生效</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure><h3 id="5-验证"><a href="#5-验证" class="headerlink" title="5.验证"></a>5.验证</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">simon@virtual-machine:~$ go env</span><br><span class="line">...</span><br><span class="line">GOHOSTARCH=&quot;amd64&quot;</span><br><span class="line">GOHOSTOS=&quot;linux&quot;</span><br><span class="line">GOOS=&quot;linux&quot;</span><br><span class="line">GOPATH=&quot;/home/simon/goprojects&quot;</span><br><span class="line">...</span><br><span class="line">GOROOT=&quot;/usr/local/go&quot;</span><br></pre></td></tr></table></figure><h3 id="6-代码测试"><a href="#6-代码测试" class="headerlink" title="6.代码测试"></a>6.代码测试</h3><p>前面我的go脚本存放在<code>~/goprojects</code>下面，按照go的workspace设计，在下面依次存放src, pkg, bin目录，在src中，存放不同的项目文件，每个项目对应一个子文件夹，参见下面的目录结构,并<br>在src目录下新建一个hello文件夹，放入hello.go文件，内容如下<br>目录结构：<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">goprojects</span><br><span class="line">├── bin</span><br><span class="line">│   └── hello</span><br><span class="line">├── pkg</span><br><span class="line">└── src</span><br><span class="line">    └── hello</span><br><span class="line">        ├── hello</span><br><span class="line">        └── hello.<span class="keyword">go</span></span><br></pre></td></tr></table></figure></p><p>测试代码<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">fmt.Println(<span class="string">"Hello World"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="在hello-go的当前目录下面，采用几种方法运行"><a href="#在hello-go的当前目录下面，采用几种方法运行" class="headerlink" title="在hello.go的当前目录下面，采用几种方法运行"></a>在hello.go的当前目录下面，采用几种方法运行</h3><p>1.在当前目录下面会生成hello<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> build hello.<span class="keyword">go</span></span><br><span class="line"><span class="comment">//执行</span></span><br><span class="line">./hello</span><br></pre></td></tr></table></figure></p><p>2.将hello.go生成的文件存放在统一的bin文件下面<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> install hello.<span class="keyword">go</span></span><br><span class="line"><span class="comment">//执行</span></span><br><span class="line">./hello</span><br></pre></td></tr></table></figure></p><p>3.检查程序是否可以编译通过，直接显示结果，并不会生成可执行文件<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> run hello.<span class="keyword">go</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-首先，去官网下载对应版本的压缩包：https-golang-org-dl&quot;&gt;&lt;a href=&quot;#1-首先，去官网下载对应版本的压缩包：https-golang-org-dl&quot; class=&quot;headerlink&quot; title=&quot;1.首先，去官网下载对应版本的压
+      
+    
+    </summary>
+    
+      <category term="go" scheme="http://yoursite.com/categories/go/"/>
+    
+    
+      <category term="go" scheme="http://yoursite.com/tags/go/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu上的防火墙iptables简单使用</title>
@@ -38,31 +63,6 @@
     
     
       <category term="iptables" scheme="http://yoursite.com/tags/iptables/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu安装golang</title>
-    <link href="http://yoursite.com/2018/01/04/Ubuntu%E5%AE%89%E8%A3%85golang/"/>
-    <id>http://yoursite.com/2018/01/04/Ubuntu安装golang/</id>
-    <published>2018-01-04T10:37:30.000Z</published>
-    <updated>2018-10-16T07:54:16.289Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-首先，去官网下载对应版本的压缩包：https-golang-org-dl"><a href="#1-首先，去官网下载对应版本的压缩包：https-golang-org-dl" class="headerlink" title="1.首先，去官网下载对应版本的压缩包：https://golang.org/dl/"></a>1.首先，去官网下载对应版本的压缩包：<a href="https://golang.org/dl/" target="_blank" rel="noopener">https://golang.org/dl/</a></h3><h3 id="2-解压"><a href="#2-解压" class="headerlink" title="2.解压"></a>2.解压</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -zxvf go1.11.1.linux-amd64.tar.gz</span><br></pre></td></tr></table></figure><h3 id="3-将解压后的文件夹go移动到-usr-local"><a href="#3-将解压后的文件夹go移动到-usr-local" class="headerlink" title="3.将解压后的文件夹go移动到/usr/local"></a>3.将解压后的文件夹go移动到<code>/usr/local</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mv go /usr/local</span><br></pre></td></tr></table></figure><h3 id="4-设置环境变量"><a href="#4-设置环境变量" class="headerlink" title="4.设置环境变量"></a>4.设置环境变量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc </span><br><span class="line">//尾部输入,path目录可以自己定义</span><br><span class="line">export GOROOT=/usr/local/go</span><br><span class="line">export GOPATH=$HOME/goprojects</span><br><span class="line">export GOBIN=$GOPATH/bin</span><br><span class="line">export PATH=$PATH:$GOROOT/bin:$GOPATH/bin</span><br><span class="line">//使修改生效</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure><h3 id="5-验证"><a href="#5-验证" class="headerlink" title="5.验证"></a>5.验证</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">simon@virtual-machine:~$ go env</span><br><span class="line">...</span><br><span class="line">GOHOSTARCH=&quot;amd64&quot;</span><br><span class="line">GOHOSTOS=&quot;linux&quot;</span><br><span class="line">GOOS=&quot;linux&quot;</span><br><span class="line">GOPATH=&quot;/home/simon/goprojects&quot;</span><br><span class="line">...</span><br><span class="line">GOROOT=&quot;/usr/local/go&quot;</span><br></pre></td></tr></table></figure><h3 id="6-代码测试"><a href="#6-代码测试" class="headerlink" title="6.代码测试"></a>6.代码测试</h3><p>前面我的go脚本存放在<code>~/goprojects</code>下面，按照go的workspace设计，在下面依次存放src, pkg, bin目录，在src中，存放不同的项目文件，每个项目对应一个子文件夹，参见下面的目录结构,并<br>在src目录下新建一个hello文件夹，放入hello.go文件，内容如下<br>目录结构：<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">goprojects</span><br><span class="line">├── bin</span><br><span class="line">│   └── hello</span><br><span class="line">├── pkg</span><br><span class="line">└── src</span><br><span class="line">    └── hello</span><br><span class="line">        ├── hello</span><br><span class="line">        └── hello.<span class="keyword">go</span></span><br></pre></td></tr></table></figure></p><p>测试代码<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">fmt.Println(<span class="string">"Hello World"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h4 id="在hello-go的当前目录下面，采用几种方法运行"><a href="#在hello-go的当前目录下面，采用几种方法运行" class="headerlink" title="在hello.go的当前目录下面，采用几种方法运行"></a>在hello.go的当前目录下面，采用几种方法运行</h4><p>1.在当前目录下面会生成hello<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> build hello.<span class="keyword">go</span></span><br><span class="line"><span class="comment">//执行</span></span><br><span class="line">./hello</span><br></pre></td></tr></table></figure></p><p>2.将hello.go生成的文件存放在统一的bin文件下面<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> install hello.<span class="keyword">go</span></span><br><span class="line"><span class="comment">//执行</span></span><br><span class="line">./hello</span><br></pre></td></tr></table></figure></p><p>3.检查程序是否可以编译通过，直接显示结果，并不会生成可执行文件<br><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">go</span> run hello.<span class="keyword">go</span></span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;1-首先，去官网下载对应版本的压缩包：https-golang-org-dl&quot;&gt;&lt;a href=&quot;#1-首先，去官网下载对应版本的压缩包：https-golang-org-dl&quot; class=&quot;headerlink&quot; title=&quot;1.首先，去官网下载对应版本的压
-      
-    
-    </summary>
-    
-      <category term="go" scheme="http://yoursite.com/categories/go/"/>
-    
-    
-      <category term="go" scheme="http://yoursite.com/tags/go/"/>
     
   </entry>
   
